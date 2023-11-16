@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shapes using Canvas in HTML</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+        margin-bottom: 10px;
+      }
+      .box {
+        display: inline-block;
+        width: 200px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h3>Line</h3>
+      <canvas id="line" width="200px" height="200px"></canvas>
+    </div>
+    <div class="box">
+      <h3>Rectangle</h3>
+      <canvas id="rectangle" width="200px" height="200px"></canvas>
+    </div>
+    <div class="box">
+      <h3>Circle</h3>
+      <canvas id="Circle" width="200px" height="200px"></canvas>
+    </div>
+    <div class="box">
+      <h3>Gradient</h3>
+      <canvas id="gradient" width="200px" height="200px"></canvas>
+    </div>
+    <div class="box">
+      <h3>Text</h3>
+      <canvas id="text" width="200px" height="200px"></canvas>
+    </div>
+    <script>
+      // Line
+      const line = document.getElementById("line");
+      const lineCtx = line.getContext("2d");
+      lineCtx.beginPath();
+      lineCtx.moveTo(10, 10);
+      lineCtx.lineTo(100, 100);
+      lineCtx.stroke();
+
+      // Rectangle
+      const rectangle = document.getElementById("rectangle");
+      const rectangleCtx = rectangle.getContext("2d");
+      rectangleCtx.fillStyle = "green";
+      rectangleCtx.fillRect(10, 10, 180, 180);
+
+      // Circle
+      const circle = document.getElementById("Circle");
+      const circleCtx = circle.getContext("2d");
+      circleCtx.fillStyle = "red";
+      circleCtx.beginPath();
+      circleCtx.arc(100, 100, 80, 0, 2 * Math.PI);
+      circleCtx.fill();
+
+      // Gradient
+      const gradient = document.getElementById("gradient");
+      const gradientCtx = gradient.getContext("2d");
+      const grad = gradientCtx.createLinearGradient(0, 0, 200, 100);
+      grad.addColorStop(0, "red");
+      grad.addColorStop(1, "pink");
+      gradientCtx.fillStyle = grad;
+      gradientCtx.fillRect(10, 10, 180, 180);
+
+      // Text
+      const text = document.getElementById("text");
+      const textCtx = text.getContext("2d");
+      textCtx.font = "30px Arial";
+      textCtx.fillStyle = grad;
+      textCtx.fillText("Hello World", 20, 100);
+    </script>
+  </body>
+</html>
