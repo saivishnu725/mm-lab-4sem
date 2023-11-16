@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Direction in Animation</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation: move 5s infinite;
+        animation-direction: reverse;
+      }
+      @keyframes move {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Reverse Direction of Animation</h1>
+    <div />
+  </body>
+</html>
